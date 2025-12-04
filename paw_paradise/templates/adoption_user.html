@@ -1,0 +1,284 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Paw Paradise - Pet Adoption</title>
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body {
+      font-family: 'Poppins', sans-serif;
+      background-color: #fff8e7;
+      color: #333;
+    }
+    header {
+      background-color: #ffb347;
+      color: white;
+      padding: 20px 0;
+      text-align: center;
+    }
+    nav {
+      background-color: #ffcc80;
+      display: flex;
+      justify-content: center;
+      gap: 30px;
+      padding: 10px 0;
+    }
+    nav a {
+      text-decoration: none;
+      color: #333;
+      font-weight: 600;
+    }
+    nav a:hover { color: #ff6600; }
+    section { padding: 40px; text-align: center; }
+    h2 { color: #ff6600; margin-bottom: 20px; }
+
+    .dog-container {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 25px;
+      justify-items: center;
+      margin-top: 20px;
+    }
+    .dog-card {
+      background-color: #fff;
+      border-radius: 15px;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+      width: 250px;
+      padding: 15px;
+      text-align: center;
+      transition: transform 0.3s;
+    }
+    .dog-card:hover { transform: translateY(-5px); }
+    .dog-card img {
+      width: 100%;
+      height: 200px;
+      border-radius: 10px;
+      object-fit: cover;
+    }
+    .dog-card h3 { color: #ff6600; margin-top: 10px; }
+    .dog-card p { margin: 5px 0; font-size: 15px; }
+    .adopt-btn {
+      background-color: #ff6600;
+      color: white;
+      border: none;
+      border-radius: 8px;
+      padding: 8px 16px;
+      cursor: pointer;
+      font-size: 14px;
+      font-weight: bold;
+      margin-top: 10px;
+      transition: 0.3s;
+    }
+    .adopt-btn:hover { background-color: #e65c00; }
+
+    footer {
+      background-color: #ffb347;
+      color: white;
+      text-align: center;
+      padding: 15px 0;
+      margin-top: 40px;
+    }
+
+    /* Adoption form popup */
+    #adoptForm {
+      display: none;
+      position: fixed;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      background: #fff;
+      padding: 30px;
+      border-radius: 15px;
+      box-shadow: 0 4px 20px rgba(0,0,0,0.2);
+      z-index: 10;
+      width: 300px;
+      text-align: center;
+    }
+    #adoptForm input, #adoptForm textarea {
+      width: 90%;
+      margin: 10px 0;
+      padding: 8px;
+      border-radius: 5px;
+      border: 1px solid #ccc;
+    }
+    #adoptForm button {
+      background-color: #ff6600;
+      color: white;
+      border: none;
+      padding: 10px 20px;
+      border-radius: 8px;
+      cursor: pointer;
+    }
+    #adoptForm button:hover { background-color: #e65c00; }
+
+    #overlay {
+      display: none;
+      position: fixed;
+      top: 0; left: 0;
+      width: 100%; height: 100%;
+      background: rgba(0,0,0,0.5);
+      z-index: 5;
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <h1>🐾 Paw Paradise</h1>
+    <p>Find Your Furry Friend</p>
+  </header>
+
+  <nav>
+    <a href="/">Home</a>
+    <a href="/services.html">Services</a>
+    <a href="/adoption_user,html">Adoption</a>
+    <a href="/contact.html">Contact</a>
+  </nav>
+
+  <section id="adoption">
+    <h2>Adopt Your Perfect Companion 🐶</h2>
+    <div class="dog-container">
+      <!-- Example Dog Card -->
+      <div class="dog-card">
+        <img src="https://supertails.com/cdn/shop/articles/golden-retriever_bb80d080-de9e-40e1-b0d8-1d53cb110b64.jpg?v=1755608799" alt="Zoe">
+        <h3>Zoe</h3>
+        <p><strong>Age:</strong> 2 years</p>
+        <p><strong>Breed:</strong> Golden Retriever</p>
+        <button class="adopt-btn" onclick="openAdoptForm('Zoe')">Adopt Me</button>
+      </div>
+      <div class="dog-card"> 
+        <img src="https://www.purina.in/sites/default/files/2025-06/BREED%2520Hero%2520Mobile_0040_retriever_labrador.jpg" alt="Leo">
+         <h3>Leo</h3>
+          <p><strong>Age:</strong> 3 years</p> 
+          <p><strong>Gender:</strong> Female</p>
+           <p><strong>Breed:</strong> Labrador</p> 
+           <!-- <button class="adopt-btn">Adopt Me</button> -->
+             <button class="adopt-btn" onclick="openAdoptForm('Leo')">Adopt Me</button>
+           </div> 
+           <div class="dog-card">
+             <img src="https://cdn.petdirect.co.nz/cache/ck_editor_image/f1/1f/743e7275e350c7ffac7b7e87a2c9.webp" alt="Samurai"> 
+             <h3>Samurai</h3> 
+             <p><strong>Age:</strong> 1 year</p>
+              <p><strong>Gender:</strong> Male</p> 
+              <p><strong>Breed:</strong> Beagle</p>
+               <!-- <button class="adopt-btn">Adopt Me</button> -->
+                 <button class="adopt-btn" onclick="openAdoptForm('Samurai')">Adopt Me</button>
+               </div>
+                <div class="dog-card"> 
+                  <img src="https://www.dogstrust.org.uk/images/800x600/assets/2023-06/SiberianHusky.png" alt="Luna"> 
+                  <h3>Luna</h3>
+                   <p><strong>Age:</strong> 4 years</p>
+                    <p><strong>Gender:</strong> Female</p> 
+                    <p><strong>Breed:</strong> Husky</p> 
+                    <!-- <button class="adopt-btn">Adopt Me</button>  -->
+                      <button class="adopt-btn" onclick="openAdoptForm('Luna')">Adopt Me</button>
+                  </div> 
+                  <div class="dog-card">
+                     <img src="https://www.trupanion.com/images/trupanionwebsitelibraries/bg/bernese-mountain-dog-snow.jpg?sfvrsn=fa2b217e_6" alt="Salaar">
+                      <h3>Salaar</h3>
+                       <p><strong>Age:</strong> 3 years</p> 
+                       <p><strong>Gender:</strong> Male</p> 
+                       <p><strong>Breed:</strong> Bernese Mountain</p>
+                        <!-- <button class="adopt-btn">Adopt Me</button> -->
+                          <button class="adopt-btn" onclick="openAdoptForm('Salaar')">Adopt Me</button>
+                       </div> 
+                       <div class="dog-card"> 
+                        <img src="https://www.pedigree.in/files/inline-images/MicrosoftTeams-image%20%2811%29.png" alt="Veeru"> 
+                        <h3>Veeru</h3> 
+                        <p><strong>Age:</strong> 3 years</p>
+                         <p><strong>Gender:</strong> Male</p> <p><strong>Breed:</strong> Indie</p> 
+                         <!-- <button class="adopt-btn">Adopt Me</button>  -->
+                           <button class="adopt-btn" onclick="openAdoptForm('Veeru')">Adopt Me</button>
+                        </div> 
+                        <div class="dog-card"> 
+                          <img src="https://png.pngtree.com/png-clipart/20230506/original/pngtree-isolated-black-dog-on-white-background-png-image_9145487.png" alt="Suri"> 
+                          <h3>Suri</h3> 
+                          <p><strong>Age:</strong> 5 years</p>
+                           <p><strong>Gender:</strong> Female</p> <p><strong>Breed:</strong> Black Indie</p>
+                            <!-- <button class="adopt-btn">Adopt Me</button>  -->
+                              <button class="adopt-btn" onclick="openAdoptForm('Suri')">Adopt Me</button>
+                          </div> 
+                          <div class="dog-card">
+                             <img src="https://www.akc.org/wp-content/uploads/2017/11/Chihuahua-standing-in-three-quarter-view.jpg" alt="Hampu"> 
+                             <h3>Hampu</h3> 
+                             <p><strong>Age:</strong> 5 years</p> <p><strong>Gender:</strong> Male</p>
+                              <p><strong>Breed:</strong> Chihuahua</p> 
+                              <!-- <button class="adopt-btn">Adopt Me</button>  -->
+                                <button class="adopt-btn" onclick="openAdoptForm('Hampu')">Adopt Me</button>
+                            </div> 
+                            <div class="dog-card"> 
+                              <img src="https://thumbs.dreamstime.com/b/captivating-image-showcases-pure-white-persian-cat-striking-poised-upright-posture-against-flawlessly-backdrop-355962064.jpg" alt="Hampu"> 
+                              <h3>Django</h3> 
+                              <p><strong>Age:</strong> 5 years</p> <p><strong>Gender:</strong> Male</p> 
+                              <p><strong>Breed:</strong> Persian Cat</p>
+                               <!-- <button class="adopt-btn">Adopt Me</button>  -->
+                                 <button class="adopt-btn" onclick="openAdoptForm('Django')">Adopt Me</button>
+                              </div> 
+                              <div class="dog-card">
+                                 <img src="https://www.akc.org/wp-content/uploads/2017/11/German-Shepherd-on-White-00.jpg" alt="Hampu"> 
+                                 <h3>Malena</h3>
+                                  <p><strong>Age:</strong> 2 years</p> <p><strong>Gender:</strong> Female</p> 
+                                  <p><strong>Breed:</strong> German Shepherd</p>
+                                   <!-- <button class="adopt-btn">Adopt Me</button> -->
+                                     <button class="adopt-btn" onclick="openAdoptForm('Malena')">Adopt Me</button>
+                                   </div>
+                                    <div class="dog-card">
+                                       <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ8-e5TOOgpxsvHr4k33VpYG0vGE6qaQJjBsA&s" alt="Hampu">
+                                        <h3>Sara</h3> 
+                                        <p><strong>Age:</strong> 2 years</p> <p><strong>Gender:</strong> Female</p>
+                                         <p><strong>Breed:</strong> Shih Tzu</p> 
+                                         <!-- <button class="adopt-btn">Adopt Me</button> -->
+                                           <button class="adopt-btn" onclick="openAdoptForm('Sara')">Adopt Me</button>
+                                         </div> 
+                                         <div class="dog-card">
+                                           <img src="https://cdna.artstation.com/p/assets/images/images/070/049/496/large/daria-lozynina-2.jpg?1701648694" alt="Hampu"> 
+                                           <h3>Ugram</h3> 
+                                           <p><strong>Age:</strong> 2 years</p> <p><strong>Gender:</strong> Male</p> 
+                                           <p><strong>Breed:</strong> Mudhol Hound</p> 
+                                           <!-- <button class="adopt-btn">Adopt Me</button>  -->
+                                             <button class="adopt-btn" onclick="openAdoptForm('Ugram')">Adopt Me</button>
+                                          </div> 
+                                          <div class="dog-card"> 
+                                            <img src="https://img.freepik.com/premium-photo/orange-tabby-cat-standing-white-background_97167-53316.jpg" alt="Hampu">
+                                             <h3>Billesh </h3>
+                                              <p><strong>Age:</strong> 2 years</p> <p><strong>Gender:</strong> Male</p> 
+                                              <p><strong>Breed:</strong> Indie Cat</p> 
+                                              <!-- <button class="adopt-btn">Adopt Me</button> -->
+                                                <button class="adopt-btn" onclick="openAdoptForm('Billesh')">Adopt Me</button>
+                                             </div> 
+                                            </div>
+  </section>
+
+  <!-- Popup Form -->
+  <div id="overlay" onclick="closeForm()"></div>
+
+  <form id="adoptForm" action="/adopt" method="POST">
+    <h3>Adopt <span id="dogNameDisplay"></span></h3>
+    <input type="hidden" name="dog_name" id="dogNameInput">
+    <input type="email" name="email" placeholder="Your Email" required><br>
+    <textarea name="reason" placeholder="Why do you want to adopt?" required></textarea><br>
+    <input type="date" name="adoption_date" required><br>
+    <button type="submit">Submit Request</button>
+    <button type="button" onclick="closeForm()">Cancel</button>
+  </form>
+
+  <footer>
+    <p>&copy; 2025 Paw Paradise | All Rights Reserved</p>
+  </footer>
+
+  <script>
+    function openAdoptForm(dogName) {
+      document.getElementById('dogNameDisplay').textContent = dogName;
+      document.getElementById('dogNameInput').value = dogName;
+      document.getElementById('adoptForm').style.display = 'block';
+      document.getElementById('overlay').style.display = 'block';
+    }
+    function closeForm() {
+      document.getElementById('adoptForm').style.display = 'none';
+      document.getElementById('overlay').style.display = 'none';
+    }
+  </script>
+
+</body>
+</html>

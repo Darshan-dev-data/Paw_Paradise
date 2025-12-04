@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Paw Paradise - Register</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: 'Poppins', sans-serif;
+    }
+
+    body {
+      background-color: #fffaf0;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      height: 100vh;
+    }
+
+    header {
+      position: absolute;
+      top: 20px;
+      text-align: center;
+      color: #ff6600;
+    }
+
+    header h1 {
+      font-size: 2rem;
+    }
+
+    .register-box {
+      background-color: #ffffff;
+      padding: 40px;
+      border-radius: 20px;
+      box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+      width: 90%;
+      max-width: 420px;
+      text-align: center;
+      animation: fadeIn 1s ease-in;
+    }
+
+    .register-box h2 {
+      color: #ff6600;
+      margin-bottom: 20px;
+    }
+
+    .register-box input {
+      width: 100%;
+      padding: 12px;
+      margin: 10px 0;
+      border: 2px solid #ffcc80;
+      border-radius: 10px;
+      outline: none;
+      transition: 0.3s;
+    }
+
+    .register-box input:focus {
+      border-color: #ff6600;
+    }
+
+    .register-box button {
+      background-color: #ff6600;
+      color: white;
+      border: none;
+      padding: 12px 20px;
+      width: 100%;
+      border-radius: 10px;
+      font-weight: bold;
+      font-size: 1rem;
+      cursor: pointer;
+      transition: 0.3s;
+    }
+
+    .register-box button:hover {
+      background-color: #e65c00;
+      transform: scale(1.05);
+    }
+
+    .extra-links {
+      margin-top: 15px;
+      font-size: 0.9rem;
+    }
+
+    .extra-links a {
+      color: #ff6600;
+      text-decoration: none;
+      font-weight: 600;
+    }
+
+    .paw {
+      font-size: 3rem;
+      color: #ffcc80;
+      animation: rotate 4s infinite linear;
+    }
+
+    @keyframes rotate {
+      0% { transform: rotate(0deg); }
+      100% { transform: rotate(360deg); }
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(20px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>🐾 Paw Paradise</h1>
+    <p>Create your paw-perfect account!</p>
+  </header>
+
+  <div class="register-box">
+    <div class="paw">🐾</div>
+    <h2>Register</h2>
+    <form action="/register" method="POST">
+  <input type="text" name="name" placeholder="Full Name" required><br>
+  <input type="email" name="email" placeholder="Email" required><br>
+  <input type="password" name="password" placeholder="Password" required><br>
+  <button type="submit">Register</button>
+</form>
+
+
+    <!-- <form action="#" method="post">
+      <input type="text" placeholder="Full Name" required>
+      <input type="email" placeholder="Email" required>
+      <input type="password" placeholder="Password" required>
+      <input type="password" placeholder="Confirm Password" required>
+      <button type="submit">Create Account</button>
+    </form> -->
+
+    <div class="extra-links">
+      <p>Already have an account? <a href="login.html">Login</a></p>
+    </div>
+  </div>
+</body>
+</html>

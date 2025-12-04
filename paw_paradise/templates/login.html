@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Paw Paradise - Login</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: 'Poppins', sans-serif;
+    }
+
+    body {
+      background-color: #fffaf0;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      height: 100vh;
+    }
+
+    header {
+      position: absolute;
+      top: 20px;
+      text-align: center;
+      color: #ff6600;
+    }
+
+    header h1 {
+      font-size: 2rem;
+    }
+
+    .login-box {
+      background-color: #ffffff;
+      padding: 40px;
+      border-radius: 20px;
+      box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+      width: 90%;
+      max-width: 400px;
+      text-align: center;
+      animation: slideUp 1s ease-out;
+    }
+
+    .login-box h2 {
+      color: #ff6600;
+      margin-bottom: 20px;
+    }
+
+    .login-box input {
+      width: 100%;
+      padding: 12px;
+      margin: 10px 0;
+      border: 2px solid #ffcc80;
+      border-radius: 10px;
+      outline: none;
+      transition: 0.3s;
+    }
+
+    .login-box input:focus {
+      border-color: #ff6600;
+    }
+
+    .login-box button {
+      background-color: #ff6600;
+      color: white;
+      border: none;
+      padding: 12px 20px;
+      width: 100%;
+      border-radius: 10px;
+      font-weight: bold;
+      font-size: 1rem;
+      cursor: pointer;
+      transition: 0.3s;
+    }
+
+    .login-box button:hover {
+      background-color: #e65c00;
+      transform: scale(1.05);
+    }
+
+    .extra-links {
+      margin-top: 15px;
+      font-size: 0.9rem;
+    }
+
+    .extra-links a {
+      color: #ff6600;
+      text-decoration: none;
+      font-weight: 600;
+    }
+
+    .paw {
+      font-size: 3rem;
+      color: #ffcc80;
+      animation: bounce 2s infinite;
+    }
+
+    @keyframes bounce {
+      0%, 100% { transform: translateY(0); }
+      50% { transform: translateY(-8px); }
+    }
+
+    @keyframes slideUp {
+      from { opacity: 0; transform: translateY(30px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>🐾 Paw Paradise</h1>
+    <p>Welcome back to your pet world!</p>
+  </header>
+
+  <div class="login-box">
+    <div class="paw">🐶</div>
+    <h2>Login</h2>
+    <form action="/login" method="POST">
+  <input type="email" name="email" placeholder="Email" required><br>
+  <input type="password" name="password" placeholder="Password" required><br>
+  <button type="submit">Login</button>
+</form>
+
+
+    <!-- <form action="#" method="post">
+      <input type="email" placeholder="Enter Email" required>
+      <input type="password" placeholder="Enter Password" required>
+      <button type="submit">Login</button>
+    </form> -->
+
+    <div class="extra-links">
+      <p>Don’t have an account? <a href="register.html">Register</a></p>
+    </div>
+  </div>
+</body>
+</html>

@@ -1,0 +1,358 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Paw Paradise - Dog Facts Around the World</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Poppins', sans-serif;
+      background-color: #fffaf0;
+      color: #333;
+      overflow-x: hidden;
+    }
+
+    header {
+      background-color: #ffb347;
+      color: white;
+      padding: 20px 0;
+      text-align: center;
+      box-shadow: 0 3px 10px rgba(0,0,0,0.1);
+    }
+
+    nav {
+      background-color: #ffcc80;
+      display: flex;
+      justify-content: center;
+      gap: 30px;
+      padding: 12px 0;
+    }
+
+    nav a {
+      text-decoration: none;
+      color: #333;
+      font-weight: 600;
+      transition: 0.3s;
+    }
+
+    nav a:hover {
+      color: #ff6600;
+    }
+
+    section {
+      padding: 50px 20px;
+      text-align: center;
+      animation: fadeIn 2s ease-in;
+    }
+
+    h2 {
+      font-size: 2rem;
+      color: #ff6600;
+      margin-bottom: 30px;
+      text-shadow: 1px 1px 3px rgba(0,0,0,0.1);
+      animation: slideDown 1s ease-out;
+    }
+
+    .facts-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 35px;
+  justify-items: center;
+  padding: 40px 5%;
+}
+
+
+    .fact-card img {
+  width: 100%;
+  height: 230px;
+  object-fit: cover;
+  border-radius: 12px;
+  margin-bottom: 15px;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+}
+
+    .fact-card:nth-child(1) { animation-delay: 0.3s; }
+    .fact-card:nth-child(2) { animation-delay: 0.6s; }
+    .fact-card:nth-child(3) { animation-delay: 0.9s; }
+    .fact-card:nth-child(4) { animation-delay: 1.2s; }
+    .fact-card:nth-child(5) { animation-delay: 1.5s; }
+    .fact-card:nth-child(6) { animation-delay: 1.8s; }
+
+    .fact-card:hover {
+      transform: scale(1.05);
+      box-shadow: 0 10px 25px rgba(255,102,0,0.2);
+    }
+
+    .fact-card h3 {
+      color: #ff6600;
+      margin-bottom: 10px;
+      font-size: 1.2rem;
+    }
+
+    .fact-card p {
+      font-size: 0.95rem;
+      color: #555;
+      line-height: 1.5;
+    }
+
+    footer {
+      background-color: #ffb347;
+      color: white;
+      text-align: center;
+      padding: 15px 0;
+      margin-top: 40px;
+    }
+
+    /* ✨ Animations */
+    @keyframes fadeIn {
+      from { opacity: 0; }
+      to { opacity: 1; }
+    }
+
+    @keyframes slideDown {
+      from { opacity: 0; transform: translateY(-30px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    @keyframes fadeUp {
+      from { opacity: 0; transform: translateY(30px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <h1>🐾 Paw Paradise</h1>
+    <!-- <p>Dog Facts Around the World 🌍</p> -->
+  </header>
+  <nav>
+  <a href="{{ url_for('home') }}">Home</a>
+  <a href="{{ url_for('services') }}">Services</a>
+
+  <!-- <a href="{{ url_for('services') }}">Services</a> -->
+  <a href="{{ url_for('adoption') }}">Adoption</a>
+  <a href="{{ url_for('contact') }}">Contact</a>
+  <a href="{{url_for('login')}}">Login</a>
+  <a href="{{url_for('register')}}">Register</a>
+</nav>
+
+
+  <!-- <nav>
+    <a href="index.html">Home</a>
+    <a href="grooming.html">Services</a>
+    <a href="adoption_user.html">Adoption</a>
+    <a href="contact.html">Contact</a>
+    <a href="login.html">Login</a>
+<a href="register.html">Register</a> -->
+
+  </nav>
+
+  <section id="dog-facts">
+    <h2>🐶 Interesting Dog & Cat Facts Around the World 🌏</h2>
+
+    <div class="facts-container">
+      <div class="fact-card">
+        <img src="https://media.istockphoto.com/id/1198387244/photo/red-dog-lies-on-a-white-background-japanese-dog-smiling.jpg?s=612x612&w=0&k=20&c=6ggN5lrLj_cEcF7CCLNvCxUmHlywAeVvVcdcJMRoH8E=">
+        <h3> Japan – Shiba Inu’s Smile</h3>
+        <p>The Shiba Inu, Japan’s oldest native breed, is known for its confident personality and “smiling” face — a true national treasure!</p>
+      </div>
+
+      <div class="fact-card">
+        <img src="https://media.istockphoto.com/id/1399405879/photo/isolated-portrait-of-a-cute-corgi-dog-puppy-in-a-red-royal-robe-and-a-gold-tiara-decorated.jpg?s=612x612&w=0&k=20&c=LPT5ccr7M_EDRn7GFRL5i251s69_7lZkQysJHwqoJg0=">
+        <h3> England – The Queen’s Corgis</h3>
+        <p>Queen Elizabeth II’s love for Corgis made the breed world-famous — she owned over 30 of them during her reign!</p>
+      </div>
+
+      <div class="fact-card">
+        ,<img src="https://media.istockphoto.com/id/825562476/photo/black-and-white-stray-dog-standing-side-ways-isolated-on-white-background.jpg?s=170667a&w=0&k=20&c=CcsUo9bzE7tqDOr74fQFt_DFlGSlFfgbgVLT3LErU-A=" alt="">
+        <h3>India – Street-Smart Indies</h3>
+        <p>The Indian Pariah Dog, or Indie, is one of the most ancient and intelligent breeds — known for loyalty, health, and adaptability.</p>
+      </div>
+
+      <div class="fact-card">
+        <img src="https://upload.wikimedia.org/wikipedia/en/7/71/Laika_%28Soviet_dog%29.jpg">
+        <h3> Russia – Laika the Space Dog</h3>
+        <p>Laika was the first animal to orbit Earth aboard Sputnik 2 in 1957 — a brave stray dog who made space history.</p>
+      </div>
+
+      <div class="fact-card">
+        <img src="https://media.istockphoto.com/id/941931954/photo/long-haired-cute-rough-collie-isolated-on-white-background.jpg?s=612x612&w=0&k=20&c=mOr0Qe_9rrUN9w1McB6NdbKawYudrn16gp8eZ-DenDY=">
+        <h3> USA – Hollywood’s Favorite Stars</h3>
+        <p>Dogs like Lassie, Beethoven, and Marley have captured millions of hearts on screen, making dogs true Hollywood legends!</p>
+      </div>
+
+      <div class="fact-card">
+        <img src="https://i.pinimg.com/736x/a9/93/1b/a9931b84b549db4451ec62a8714a2d17.jpg">
+        <h3> Switzerland – St. Bernard Heroes</h3>
+        <p>St. Bernards were bred by monks to rescue travelers lost in the Alps — their sense of smell can detect people buried under snow!</p>
+      </div>
+      <div class="fact-card">
+        <img src="https://www.warrenphotographic.co.uk/photography/bigs/42765-Springer-Spaniel-puppies-sleeping-white-background.jpg">
+        <h3>Sleepzzzz</h3>
+        <p>Adult dogs generally sleep for 12 to 14 hours a day, while puppies and older dogs can sleep for up to 18 to 20 hours</p>
+      </div>
+      <div class="fact-card">
+        <img src="https://images.litter-robot.com/media/magefan_blog/orange-tabby-cover.png" alt="">
+        <h3>Ginger Cats</h3>
+        <p>The Vets BlogMost orange cats are male due to a sex-linked gene, and they are all technically tabbies with a characteristic "M" on their foreheads.</p>
+    <a href="https://www.litter-robot.com/blog/8-orange-tabby-cat-facts/?srsltid=AfmBOookQuE5QnBX195R__2ec9P0MKy1AEnKtkhJ14TjR3F2OX6pKYPV"> Read More here</a>
+      </div>
+    </div>
+  </section>
+  <!-- 🐾 Chatbox Section -->
+<div class="chat-container" id="chatContainer">
+  <div class="chat-header" onclick="toggleChat()">
+    🐾 Paw Chat
+  </div>
+
+  <div class="chat-body" id="chatBody">
+    <div class="bot-message">Hi there! 👋 How can I help you today?</div>
+  </div>
+
+  <div class="chat-footer">
+    <input type="text" id="userInput" placeholder="Type your message..." />
+    <button onclick="sendMessage()">Send</button>
+  </div>
+</div>
+
+<style>
+  /* Chatbox base */
+  .chat-container {
+    position: fixed;
+    bottom: 20px;
+    right: 25px;
+    width: 320px;
+    background: #fffaf0;
+    border-radius: 20px;
+    box-shadow: 0 0 15px rgba(0,0,0,0.2);
+    font-family: 'Poppins', sans-serif;
+    overflow: hidden;
+    transition: all 0.3s ease;
+    z-index: 9999;
+  }
+
+  .chat-header {
+    background-color: #ff6600;
+    color: white;
+    padding: 12px;
+    text-align: center;
+    cursor: pointer;
+    font-weight: bold;
+    font-size: 16px;
+  }
+
+  .chat-body {
+    max-height: 320px;
+    overflow-y: auto;
+    padding: 12px;
+    display: none;
+    flex-direction: column;
+    background-color: #fff;
+  }
+
+  .chat-footer {
+    display: none;
+    border-top: 1px solid #ffcc80;
+    background: white;
+  }
+
+  .chat-footer input {
+    flex: 1;
+    padding: 10px;
+    border: none;
+    outline: none;
+    border-radius: 0 0 0 15px;
+  }
+
+  .chat-footer button {
+    background-color: #ff6600;
+    color: white;
+    border: none;
+    padding: 0 15px;
+    border-radius: 0 0 15px 0;
+    cursor: pointer;
+    font-weight: bold;
+  }
+
+  .user-message, .bot-message {
+    padding: 8px 12px;
+    border-radius: 12px;
+    max-width: 80%;
+    margin: 5px 0;
+    font-size: 14px;
+  }
+
+  .user-message {
+    align-self: flex-end;
+    background: #ffcc80;
+  }
+
+  .bot-message {
+    align-self: flex-start;
+    background: #ffe5b4;
+  }
+
+  /* Show when active */
+  .chat-container.open .chat-body,
+  .chat-container.open .chat-footer {
+    display: flex;
+  }
+</style>
+
+<script>
+  // Toggle open/close chat
+  function toggleChat() {
+    document.getElementById("chatContainer").classList.toggle("open");
+  }
+
+  // Send message
+  function sendMessage() {
+    const input = document.getElementById("userInput");
+    const msg = input.value.trim();
+    if (!msg) return;
+
+    const chatBody = document.getElementById("chatBody");
+
+    // User message
+    const userDiv = document.createElement("div");
+    userDiv.className = "user-message";
+    userDiv.textContent = msg;
+    chatBody.appendChild(userDiv);
+
+    input.value = "";
+
+    // Bot reply
+    const botDiv = document.createElement("div");
+    botDiv.className = "bot-message";
+    botDiv.textContent = getBotReply(msg);
+    chatBody.appendChild(botDiv);
+
+    chatBody.scrollTop = chatBody.scrollHeight;
+  }
+
+  // Simple pet replies
+  function getBotReply(msg) {
+    msg = msg.toLowerCase();
+    if (msg.includes("adopt")) return "You can find adorable dogs under the Adoption section 🐕!";
+    if (msg.includes("service")) return "We offer grooming, walking & vet services 🛁🐾";
+    if (msg.includes("hello")) return "Hello! 🐶 Welcome to Paw Paradise!";
+    if (msg.includes("bye")) return "Goodbye! Hope to see you soon 🐾❤️";
+    if (msg.includes("doctor")) return "Dr. Darshan S";
+    return "Thank you for your message! Our team will reach out soon 🐾";
+  }
+</script>
+
+
+  <footer>
+    <p>&copy; 2025 Paw Paradise | All Rights Reserved</p>
+  </footer>
+  
+</body>
+</html>

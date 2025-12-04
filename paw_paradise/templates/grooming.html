@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Paw Paradise - Service Booking</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #fff9f2;
+      margin: 0;
+      padding: 0;
+    }
+
+    header {
+      background-color: #ffb84d;
+      padding: 20px;
+      text-align: center;
+      color: white;
+      font-size: 28px;
+      font-weight: bold;
+    }
+
+    .container {
+      max-width: 900px;
+      margin: 40px auto;
+      background: white;
+      padding: 25px;
+      border-radius: 10px;
+      box-shadow: 0 0 10px rgba(0,0,0,0.1);
+    }
+
+    h2 {
+      text-align: center;
+      color: #ff8c1a;
+      border-bottom: 3px solid #ffd480;
+      padding-bottom: 8px;
+    }
+
+    form {
+      margin-top: 20px;
+    }
+
+    label {
+      display: block;
+      font-weight: bold;
+      margin-top: 10px;
+    }
+
+    input, select {
+      width: 100%;
+      padding: 10px;
+      margin-top: 5px;
+      border: 1px solid #ccc;
+      border-radius: 6px;
+    }
+
+    .btn {
+      background-color: #ff8c1a;
+      color: white;
+      padding: 10px 15px;
+      border: none;
+      border-radius: 6px;
+      cursor: pointer;
+      margin-top: 15px;
+    }
+
+    .btn:hover {
+      background-color: #e67e00;
+    }
+
+    .service-section {
+      margin-bottom: 50px;
+    }
+  </style>
+</head>
+<body>
+
+  <header>🐶 Paw Paradise - Service Booking 🐾</header>
+
+  <div class="container">
+
+    <!-- Grooming Booking -->
+    <div class="service-section">
+      <h2>Grooming Appointment</h2>
+      <form>
+        <label>Dog Name:</label>
+        <input type="text" name="dog_name" placeholder="Enter dog's name" required>
+
+        <label>Age:</label>
+        <input type="number" name="age" placeholder="Enter dog's age" required>
+
+        <label>Gender:</label>
+        <select name="gender" required>
+          <option value="">Select gender</option>
+          <option>Male</option>
+          <option>Female</option>
+        </select>
+
+        <label>Breed:</label>
+        <input type="text" name="breed" placeholder="Enter dog's breed" required>
+
+        <label>Preferred Date:</label>
+        <input type="date" name="date" required>
+
+        <label>Preferred Time:</label>
+        <input type="time" name="time" required>
+
+        <button class="btn">Book Grooming Slot</button>
+      </form>
+    </div>
+
+    <!-- Veterinary Booking -->
+    <div class="service-section">
+      <h2>Veterinary Appointment</h2>
+      <form>
+        <label>Dog Name:</label>
+        <input type="text" name="dog_name" placeholder="Enter dog's name" required>
+
+        <label>Age:</label>
+        <input type="number" name="age" placeholder="Enter dog's age" required>
+
+        <label>Gender:</label>
+        <select name="gender" required>
+          <option value="">Select gender</option>
+          <option>Male</option>
+          <option>Female</option>
+        </select>
+
+        <label>Breed:</label>
+        <input type="text" name="breed" placeholder="Enter dog's breed" required>
+
+        <label>Preferred Date:</label>
+        <input type="date" name="date" required>
+
+        <label>Preferred Time:</label>
+        <input type="time" name="time" required>
+
+        <button class="btn">Book Veterinary Slot</button>
+      </form>
+    </div>
+
+    <!-- Vaccination Booking -->
+    <div class="service-section">
+      <h2>Vaccination Appointment</h2>
+      <form>
+        <label>Dog Name:</label>
+        <input type="text" name="dog_name" placeholder="Enter dog's name" required>
+
+        <label>Age:</label>
+        <input type="number" name="age" placeholder="Enter dog's age" required>
+
+        <label>Gender:</label>
+        <select name="gender" required>
+          <option value="">Select gender</option>
+          <option>Male</option>
+          <option>Female</option>
+        </select>
+
+        <label>Breed:</label>
+        <input type="text" name="breed" placeholder="Enter dog's breed" required>
+
+        <label>Preferred Date:</label>
+        <input type="date" name="date" required>
+
+        <label>Preferred Time:</label>
+        <input type="time" name="time" required>
+
+        <button class="btn">Book Vaccination Slot</button>
+      </form>
+    </div>
+
+  </div>
+</body>
+</html>

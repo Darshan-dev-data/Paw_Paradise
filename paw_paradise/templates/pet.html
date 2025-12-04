@@ -1,0 +1,233 @@
+<!-- <!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Paw Paradise - Pet Care & Adoption</title>
+
+  <style>
+    /* ====== Global Reset ====== */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Poppins', sans-serif;
+      background-color: #fff9f2;
+      color: #333;
+      line-height: 1.6;
+    }
+
+    header {
+      background-color: #ffb347;
+      padding: 15px 0;
+      color: white;
+      text-align: center;
+      font-size: 28px;
+      letter-spacing: 1px;
+      font-weight: bold;
+    }
+
+    nav {
+      display: flex;
+      justify-content: center;
+      background-color: #ffcc80;
+      padding: 10px;
+    }
+
+    nav a {
+      text-decoration: none;
+      color: #333;
+      margin: 0 20px;
+      font-weight: bold;
+      transition: color 0.3s ease;
+    }
+
+    nav a:hover {
+      color: #ff7043;
+    }
+
+    /* ====== Hero Section ====== */
+    .hero {
+      background: url('pets_banner.jpg') center/cover no-repeat;
+      height: 400px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      color: white;
+      text-shadow: 2px 2px 5px rgba(0,0,0,0.4);
+      font-size: 36px;
+      font-weight: bold;
+    }
+
+    /* ====== Services Section ====== */
+    section {
+      padding: 40px 20px;
+      text-align: center;
+    }
+
+    h2 {
+      color: #ff8c1a;
+      font-size: 28px;
+      margin-bottom: 20px;
+    }
+
+    .service-container {
+      display: flex;
+      justify-content: center;
+      gap: 30px;
+      flex-wrap: wrap;
+    }
+
+    .service-card {
+      background: #fff;
+      padding: 20px;
+      width: 250px;
+      border-radius: 10px;
+      box-shadow: 0 0 10px rgba(0,0,0,0.1);
+      transition: transform 0.3s;
+    }
+
+    .service-card:hover {
+      transform: scale(1.05);
+    }
+
+    .service-card img {
+      width: 100%;
+      border-radius: 10px;
+      height: 160px;
+      object-fit: cover;
+    }
+
+    .service-card h3 {
+      margin: 15px 0 10px;
+      color: #ff7043;
+    }
+
+    .service-card p {
+      font-size: 15px;
+      color: #555;
+    }
+
+    .service-card a {
+      display: inline-block;
+      margin-top: 10px;
+      padding: 8px 15px;
+      background-color: #ffb347;
+      color: white;
+      border-radius: 6px;
+      text-decoration: none;
+      transition: 0.3s;
+    }
+
+    .service-card a:hover {
+      background-color: #ff7043;
+    }
+
+    /* ====== Contact Section ====== */
+    #contact {
+      background-color: #fff3e0;
+      padding: 40px 0;
+      text-align: center;
+    }
+
+    #contact .contact-box {
+      max-width: 600px;
+      margin: auto;
+      background: white;
+      padding: 25px;
+      border-radius: 10px;
+      box-shadow: 0 0 10px rgba(0,0,0,0.1);
+      text-align: left;
+    }
+
+    #contact p {
+      margin: 10px 0;
+      font-size: 16px;
+    }
+
+    footer {
+      background-color: #ffb347;
+      color: white;
+      text-align: center;
+      padding: 15px 0;
+      margin-top: 30px;
+    }
+
+  </style>
+</head>
+
+<body>
+  <!-- ====== HEADER ====== -->
+  <header>Paw Paradise 🐾</header>
+
+  <!-- ====== NAVIGATION ====== -->
+  <!-- <nav>
+    <a href="index.html">Home</a>
+    <a href="grooming.html">Services</a>
+    <a href="adoption_user.html">Adoption</a>
+    <a href="contact.html">Contact</a>
+  </nav> -->
+    <nav>
+    <a href="index">Home</a>
+    <a href="grooming">Services</a>
+    <a href="adoption_user">Adoption</a>
+    <a href="contact">Contact</a>
+  </nav>
+
+  <!-- ====== HERO SECTION ====== -->
+  <section class="hero">
+    Welcome to Paw Paradise - Care, Love & Adoption
+  </section>
+
+  <!-- ====== SERVICES SECTION ====== -->
+  <section id="services">
+    <h2>Our Services</h2>
+    <div class="service-container">
+
+      <div class="service-card">
+        <img src="grooming.jpg" alt="Grooming Service">
+        <h3>Grooming</h3>
+        <p>Professional grooming for your furry friends with love and care.</p>
+        <a href="grooming.html">Book Now</a>
+      </div>
+
+      <div class="service-card">
+        <img src="veterinary.jpg" alt="Veterinary Care">
+        <h3>Veterinary</h3>
+        <p>Qualified vets to ensure your pets are always healthy and happy.</p>
+        <a href="grooming.html">Book Now</a>
+      </div>
+
+      <div class="service-card">
+        <img src="vaccination.jpg" alt="Vaccination">
+        <h3>Vaccination</h3>
+        <p>Keep your pets safe with timely and trusted vaccinations.</p>
+        <a href="grooming.html">Book Now</a>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ====== CONTACT SECTION ====== -->
+  <section id="contact">
+    <h2>Contact Us</h2>
+    <div class="contact-box">
+      <h3 style="color:#ff8c1a;">Service Provider Details</h3>
+      <p><strong>Name:</strong> Dr. Darshan S</p>
+      <p><strong>Phone:</strong> +91 98765 43210</p>
+      <p><strong>Email:</strong> pawparadisecare@gmail.com</p>
+      <p><strong>Address:</strong> Paw Paradise Pet Care & Adoption Center,<br>
+         123, Green Paw Lane, Indiranagar, Bengaluru, Karnataka - 560038</p>
+    </div>
+  </section>
+
+  <!-- ====== FOOTER ====== -->
+  <footer>
+    &copy; 2025 Paw Paradise | All Rights Reserved
+  </footer>
+
+</body>
+</html> -->
